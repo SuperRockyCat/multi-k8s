@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+ 
+kind: Certificate
+metadata:
+  name: bowlingshoes-info-tls
+spec:
+  secretName: bowlingshoes-info
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: bowlingshoes.info
+  dnsNames:
+    - bowlingshoes.info
+    - www.bowlingshoes.info
